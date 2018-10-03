@@ -26,7 +26,7 @@ describe('TodoComponent', () => {
       description: 'Do Christmas Shopping',
       done: false,
       tasks: []
-    })
+    });
     fixture.detectChanges();
   });
 

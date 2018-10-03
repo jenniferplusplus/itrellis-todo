@@ -1,6 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatListModule, MatCardModule, MatExpansionModule } from '@angular/material';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {
+  MatListModule,
+  MatCardModule,
+  MatExpansionModule,
+  MatButtonModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -11,8 +16,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatListModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule
   ],
   declarations: []
 })
-export class MaterialModule { }
+export class MaterialModule {
+}

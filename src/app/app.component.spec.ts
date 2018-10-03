@@ -3,6 +3,7 @@ import { AppModule} from './app.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { MaterialModule } from './material/material.module';
+import {AddTodoComponent} from './todo/add-todo.component';
 
 
 describe('AppComponent', () => {
@@ -10,7 +11,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        TodoComponent
+        TodoComponent,
+        AddTodoComponent
       ],
       imports: [
         MaterialModule
