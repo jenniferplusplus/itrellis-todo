@@ -1,12 +1,20 @@
 import { TestBed, async } from '@angular/core/testing';
+import { AppModule} from './app.module';
 import { AppComponent } from './app.component';
+import { TodoComponent } from './todo/todo.component';
+import { MaterialModule } from './material/material.module';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TodoComponent
       ],
+      imports: [
+        MaterialModule
+      ]
     }).compileComponents();
   }));
 

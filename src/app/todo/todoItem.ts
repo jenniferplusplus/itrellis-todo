@@ -8,4 +8,8 @@ export class TodoItem {
   dueDate: number;
   tasks: Task[];
   done: boolean;
+
+  public constructor(init?: Partial<TodoItem>) {
+    Object.assign(this, init);
+  }
 }

@@ -12,4 +12,8 @@ export class TodoListService {
   GetAll(): TodoItem[] {
     return TODOITEMS;
   }
+
+  Get(id: number) {
+    return TODOITEMS.filter((item) => item.id === id)[0];
+  }
 }
