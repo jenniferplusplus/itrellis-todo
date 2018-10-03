@@ -5,12 +5,13 @@ export const TODOITEMS: TodoItem[] = [
     id: 1,
     createdDate: Date.parse('2018-10-01T12:00:00'),
     dueDate: Date.parse('2018-10-03'),
-    description: 'Build an Angular 6 "ToDo List" demo project',
+    description: 'Angular 6 "ToDo List" demo project',
     moreDetails: 'This project should take about a day to complete',
     done: true,
     tasks: [
-      { description: 'View, create, remove, complete ToDo items', done: true },
-      { description: 'Style things so they look pleasant', done: true }
+      { description: 'View, create, edit, delete, and complete ToDo items', done: true },
+      { description: 'View, create, edit, delete, and complete tasks', done: false },
+      { description: 'Style things so they look pleasant', done: false }
     ]
   }),
   new TodoItem({

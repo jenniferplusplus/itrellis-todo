@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 import { TodoItem} from './todoItem';
 import { TODOITEMS } from './todo-mock';
 
@@ -9,11 +11,11 @@ export class TodoListService {
 
   constructor() { }
 
-  GetAll(): TodoItem[] {
-    return TODOITEMS;
+  GetAll(): Observable<TodoItem[]> {
+    return of(TODOITEMS);
   }
 
-  Get(id: number) {
-    return TODOITEMS.filter((item) => item.id === id)[0];
+  Get(id: number): Observable<TodoItem> {
+    return of(TODOITEMS.filter((item) => item.id === id)[0]);
   }
 }

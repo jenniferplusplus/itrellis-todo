@@ -15,13 +15,20 @@ describe('TodoListService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should give a list of TodoItems', () => {
-    expect(service.GetAll()[0] instanceof TodoItem).toBe(true);
+  it('should give a list of TodoItems', (done) => {
+    service.GetAll().subscribe((list) => {
+      expect(list[0] instanceof TodoItem).toBe(true);
+
+      done();
+    });
   });
 
-  it('should give a single item by id', () => {
-    const todoItem = service.Get(2);
-    expect(todoItem).toBeDefined();
-    expect(todoItem.id).toBe(2);
+  it('should give a single todoItem by id', (done) => {
+    service.Get(2).subscribe((todoItem) => {
+      expect(todoItem).toBeDefined();
+      expect(todoItem.id).toBe(2);
+
+      done();
+    });
   });
 });
