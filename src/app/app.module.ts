@@ -13,7 +13,6 @@ import { TodoComponent } from './todo/todo.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     MaterialModule
   ],
   providers: [],
