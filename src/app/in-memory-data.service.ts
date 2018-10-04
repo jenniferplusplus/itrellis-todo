@@ -7,7 +7,7 @@ import { TODOITEMS} from './todo/todo-mock';
 @Injectable({
   providedIn: 'root'
 })
-export class InMemoryDataService implements InMemoryDbService{
+export class InMemoryDataService implements InMemoryDbService {
 
   createDb() {
     const todoItems = TODOITEMS;

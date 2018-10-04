@@ -51,10 +51,11 @@ export class TodoComponent implements OnInit {
   }
 
   onSave(): void {
-    this.todoListService.Edit(this.todoItem);
+    this.todoListService.Edit(this.todoItem)
+      .subscribe((todoItem) => this.todoItem = todoItem);
   }
 
-  onDelete(): void{
+  onDelete(): void {
     this.todoListService.Delete(this.todoItem);
   }
 

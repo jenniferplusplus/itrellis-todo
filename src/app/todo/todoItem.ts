@@ -15,7 +15,6 @@ export class TodoItem {
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    this.id = this.id || -1 * today.valueOf();
     this.createdDate = this.createdDate || today;
     this.dueDate = this.dueDate || tomorrow;
     this.tasks = this.tasks || [];
