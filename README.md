@@ -2,26 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project relies on Node and NPM. Those can be installed from the nodejs.org website if you don't already have them.
+You will also need to install the angular cli, which can be done with this command.
 
-## Code scaffolding
+```
+npm i -g ng-cli
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting started
 
-## Build
+Install dependencies then start the development server.
+```
+npm i
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The app should now be [running](http://localhost:4200) at `http://localhost:4200`
 
-## Running unit tests
+## Further development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Off the top of my head, these are some things that could be improved. But, I think they are mostly beyond the scope of this exercise.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. I should ideally add more tests. It got late and I got lazy, so I only have about half as many as I would like.
+1. The app could handle overdue items better.
+1. A real backend. The in-memory api leaves a lot to be desired, even given that it is just in-memory.
+1. A manual refresh that doesn't reload the page.
+1. Nicer styling. What's there is certainly functional, but also leaves a lot to be desired.
+1. More obvious indications that a todo item has been completed.
+1. Sorting and filtering of todo items.
+1. Tasks are eating space bar events, and I don't know why. 😬
