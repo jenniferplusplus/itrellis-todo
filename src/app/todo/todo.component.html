@@ -5,15 +5,24 @@
         <input matInput [(ngModel)]="todoItem.description">
       </mat-form-field>
     </mat-card-title>
-    <span>Due by {{dueDate | date}}</span>
+    <mat-form-field>
+      <input matInput
+             placeholder="Due by"
+             [matDatepicker]="picker"
+             [(ngModel)]="todoItem.dueDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </mat-card-title-group>
   <mat-card-content>
     <mat-accordion>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-panel-title>Added on {{createdDate | date}}</mat-panel-title>
+          <mat-panel-title>Added on {{todoItem.createdDate | date}}</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>{{todoItem.moreDetails}}</p>
+        <mat-form-field class="fill-all">
+          <textarea matInput [(ngModel)]="todoItem.moreDetails"></textarea>
+        </mat-form-field>
       </mat-expansion-panel>
     </mat-accordion>
     <mat-selection-list #tasks>
@@ -25,6 +34,4 @@
   <mat-card-actions>
     <button mat-flat-button (click)="onComplete()">{{isDone() ? 'Restart' : 'Complete'}}</button>
   </mat-card-actions>
-  <!--<mat-card-footer></mat-card-footer>-->
 </mat-card>
-

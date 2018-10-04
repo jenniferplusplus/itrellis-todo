@@ -6,7 +6,8 @@ import {
   MatExpansionModule,
   MatButtonModule,
   MatInputModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -21,7 +22,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatExpansionModule,
     MatButtonModule,
     MatInputModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: []
 })

@@ -13,15 +13,11 @@ export class TodoComponent implements OnInit {
 
   @Input()
   todoItem: TodoItem;
-  dueDate: Date;
-  createdDate: Date;
 
   constructor(private todoListService: TodoListService) {
   }
 
   ngOnInit(): void {
-    this.dueDate = new Date(this.todoItem.dueDate);
-    this.createdDate = new Date(this.todoItem.createdDate);
     this.todoItem.done = this.isDone();
   }
 
