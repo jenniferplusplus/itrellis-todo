@@ -27,12 +27,15 @@
       </mat-expansion-panel>
     </mat-accordion>
     <mat-selection-list #tasks>
-      <mat-list-option
+      <mat-list-item
         checkboxPosition="before"
-        *ngFor="let task of todoItem.tasks" [selected]="task.done"
-        (click)="onTaskClick(task)">
-        <span>{{task.description}}</span>
-      </mat-list-option>
+        *ngFor="let task of todoItem.tasks">
+        <mat-form-field>
+          <mat-checkbox [checked]="task.done" (change)="onTaskChange($event, task)">
+            <input matInput [(ngModel)]="task.description">
+          </mat-checkbox>
+        </mat-form-field>
+      </mat-list-item>
     </mat-selection-list>
   </mat-card-content>
   <mat-card-actions>

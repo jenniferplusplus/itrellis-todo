@@ -4,6 +4,7 @@ import {TodoItem} from './todoItem';
 import {TodoListService} from './todo-list.service';
 import {Task} from './task';
 import {OverdueMatcher} from '../validators';
+import {MatCheckboxChange} from '@angular/material';
 
 @Component({
   selector: 'app-todo',
@@ -37,8 +38,8 @@ export class TodoComponent implements OnInit {
     return this.todoItem.done;
   }
 
-  onTaskClick(task: Task): void {
-    task.done = !task.done;
+  onTaskChange(event: MatCheckboxChange, task: Task): void {
+    task.done = event.checked;
   }
 
   onComplete(): void {
