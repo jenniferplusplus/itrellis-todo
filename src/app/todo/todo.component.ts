@@ -42,6 +42,22 @@ export class TodoComponent implements OnInit {
     task.done = event.checked;
   }
 
+  onTaskRemove(task: Task): void {
+    this.todoItem.tasks = this.todoItem.tasks.filter((item) => item !== task);
+  }
+
+  onTaskAdd(): void {
+    this.todoItem.tasks.push(new Task());
+  }
+
+  onSave(): void {
+    this.todoListService.Edit(this.todoItem);
+  }
+
+  onDelete(): void{
+    this.todoListService.Delete(this.todoItem);
+  }
+
   onComplete(): void {
     const value: boolean = !this.isDone();
     this.todoItem.tasks.forEach((task) => task.done = value);

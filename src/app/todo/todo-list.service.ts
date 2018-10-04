@@ -50,4 +50,14 @@ export class TodoListService {
         this.subject.next(value);
       });
   }
+
+  Delete(delItem: TodoItem): void {
+    this.observable
+      .pipe(first())
+      .subscribe(value => {
+        const list = value.filter(item => item !== delItem);
+
+        this.subject.next(list);
+      });
+  }
 }

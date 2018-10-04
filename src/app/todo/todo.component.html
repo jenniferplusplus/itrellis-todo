@@ -30,15 +30,21 @@
       <mat-list-item
         checkboxPosition="before"
         *ngFor="let task of todoItem.tasks">
-        <mat-form-field>
+        <mat-form-field class="fill-all">
           <mat-checkbox [checked]="task.done" (change)="onTaskChange($event, task)">
             <input matInput [(ngModel)]="task.description">
           </mat-checkbox>
+          <button mat-mini-fab (click)="onTaskRemove(task)">X</button>
         </mat-form-field>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-mini-fab (click)="onTaskAdd()">+</button>
       </mat-list-item>
     </mat-selection-list>
   </mat-card-content>
   <mat-card-actions>
     <button mat-flat-button color="{{isDone() ? 'accent' : 'primary'}}" (click)="onComplete()">{{isDone() ? 'Restart' : 'Complete'}}</button>
+    <button mat-flat-button (click)="onSave()">Save</button>
+    <button class="right" mat-flat-button color="warn" (click)="onDelete()">Delete</button>
   </mat-card-actions>
 </mat-card>
