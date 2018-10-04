@@ -11,6 +11,7 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   exports: [
     BrowserAnimationsModule,
+    FormsModule,
     MatListModule,
     MatCardModule,
     MatExpansionModule,

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { MaterialModule } from './material/material.module';
 import {AddTodoComponent} from './todo/add-todo.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 describe('AppComponent', () => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
         AddTodoComponent
       ],
       imports: [
-        MaterialModule
+        MaterialModule,
+        HttpClientModule
       ]
     }).compileComponents();
   }));

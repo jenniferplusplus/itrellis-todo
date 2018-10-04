@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TodoComponent } from './todo.component';
 import {MaterialModule} from '../material/material.module';
 import {TodoItem} from './todoItem';
+import {TODOITEMS} from './todo-mock';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('TodoComponent', () => {
   let component: TodoComponent;
@@ -11,7 +13,7 @@ describe('TodoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TodoComponent ],
-      imports: [ MaterialModule ]
+      imports: [ MaterialModule, HttpClientModule ]
     })
     .compileComponents();
   }));
@@ -19,14 +21,7 @@ describe('TodoComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoComponent);
     component = fixture.componentInstance;
-    component.todoItem = new TodoItem({
-      id: 2,
-      createdDate: Date.parse('2018-10-01T12:00:00'),
-      dueDate: Date.parse('2018-12-25'),
-      description: 'Do Christmas Shopping',
-      done: false,
-      tasks: []
-    });
+    component.todoItem = TODOITEMS[1]
     fixture.detectChanges();
   });
 

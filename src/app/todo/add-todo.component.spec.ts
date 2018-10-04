@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddTodoComponent } from './add-todo.component';
 import {TodoListService} from './todo-list.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('AddTodoComponent', () => {
   let component: AddTodoComponent;
@@ -9,13 +10,13 @@ describe('AddTodoComponent', () => {
   let mockTodoService: TodoListService;
 
   beforeAll((() => {
-    const todoService = TestBed.get(TodoListService);
     mockTodoService = jasmine.createSpyObj('TodoListService', ['GetAll', 'Get', 'Add', 'Edit'])
   }));
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AddTodoComponent ],
+      imports: [ HttpClientModule ],
       providers: [ {provide: TodoListService, useValue: mockTodoService}]
     })
     .compileComponents();
