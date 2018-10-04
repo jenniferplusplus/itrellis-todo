@@ -1,23 +1,30 @@
 <mat-card>
   <mat-card-title-group>
-    <mat-card-title>{{todoItem.description}}</mat-card-title>
+    <mat-card-title>
+      <mat-form-field>
+        <input matInput [(ngModel)]="todoItem.description">
+      </mat-form-field>
+    </mat-card-title>
     <span>Due by {{dueDate | date}}</span>
   </mat-card-title-group>
   <mat-card-content>
     <mat-accordion>
       <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>Added on {{createdDate | date}}</mat-panel-title>
-      </mat-expansion-panel-header>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Added on {{createdDate | date}}</mat-panel-title>
+        </mat-expansion-panel-header>
         <p>{{todoItem.moreDetails}}</p>
       </mat-expansion-panel>
     </mat-accordion>
-      <mat-selection-list>
-        <mat-list-option *ngFor="let task of todoItem.tasks" [selected]="task.done">
-          <span>{{task.description}}</span>
-        </mat-list-option>
-      </mat-selection-list>
+    <mat-selection-list #tasks>
+      <mat-list-option *ngFor="let task of todoItem.tasks" [selected]="task.done" (click)="onTaskClick(task)">
+        <span>{{task.description}}</span>
+      </mat-list-option>
+    </mat-selection-list>
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button (click)="onComplete()">{{isDone() ? 'Restart' : 'Complete'}}</button>
+  </mat-card-actions>
   <!--<mat-card-footer></mat-card-footer>-->
 </mat-card>
 
