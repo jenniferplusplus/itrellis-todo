@@ -18,5 +18,6 @@ export class TodoItem {
     this.id = this.id || -1 * today.valueOf();
     this.createdDate = this.createdDate || today;
     this.dueDate = this.dueDate || tomorrow;
+    this.tasks = this.tasks || [];
   }
 }

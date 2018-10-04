@@ -26,7 +26,10 @@
       </mat-expansion-panel>
     </mat-accordion>
     <mat-selection-list #tasks>
-      <mat-list-option *ngFor="let task of todoItem.tasks" [selected]="task.done" (click)="onTaskClick(task)">
+      <mat-list-option
+        checkboxPosition="before"
+        *ngFor="let task of todoItem.tasks" [selected]="task.done"
+        (click)="onTaskClick(task)">
         <span>{{task.description}}</span>
       </mat-list-option>
     </mat-selection-list>
