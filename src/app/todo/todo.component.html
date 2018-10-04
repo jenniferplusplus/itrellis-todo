@@ -8,6 +8,7 @@
     <mat-form-field>
       <input matInput
              placeholder="Due by"
+             [errorStateMatcher]="errorMatcher"
              [matDatepicker]="picker"
              [(ngModel)]="todoItem.dueDate">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -35,6 +36,6 @@
     </mat-selection-list>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-flat-button (click)="onComplete()">{{isDone() ? 'Restart' : 'Complete'}}</button>
+    <button mat-flat-button color="{{isDone() ? 'accent' : 'primary'}}" (click)="onComplete()">{{isDone() ? 'Restart' : 'Complete'}}</button>
   </mat-card-actions>
 </mat-card>

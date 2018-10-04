@@ -3,16 +3,19 @@ import {Component, Input, OnInit} from '@angular/core';
 import {TodoItem} from './todoItem';
 import {TodoListService} from './todo-list.service';
 import {Task} from './task';
+import {OverdueMatcher} from '../validators';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
+
 export class TodoComponent implements OnInit {
 
   @Input()
   todoItem: TodoItem;
+  errorMatcher = new OverdueMatcher;
 
   constructor(private todoListService: TodoListService) {
   }
